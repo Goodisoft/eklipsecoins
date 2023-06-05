@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('./snippets/header.ejs')  %> 
+    <title>Eklipse Coins | Bitcoin Mining & Trading</title>
+
+<body>
+
+     <!-- Navigation -->
+     <%- include('./snippets/navigation.ejs') %> 
+     <!-- Navigation ends-->
+
+   <!-- about section -->
+    <div class="py-1 container-fluid about mt-4" style="overflow-x:hidden">
+      <div class="container">
+        <div class="mt-2 mb-5">
+                <div class="text-start mb-3">
+                    <h5 class="card-title about-title"> Mining Plans</h5>
+                    <p class="card-text mt-2">
+                      Our mining plans are marketed as high-reward investments with low-risk, 
+                      and it is a way to quickly grow wealth or achieve financial independence.
+                    </p>
+                </div>
+                <div class="row">
+                  
+                  <% if (context.plans) { %>
+                    <% context.plans.forEach(plan => { %>
+                      <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                        <div class="card plan-card">
+                            <h5 class="card-header text-center bg-offer p-4">
+                              <%= plan.title %>
+                            </h5>
+                            <div class="card-body text-center">
+                                <h6 class="card-title fw-bold">Profit <%= plan.profit %>% daily</h6>
+                                <p class="card-text">Duration: <%= plan.duration %> Days</p>
+                                <p class="card-text">Activation: $<%= plan.activation %> </p>
+                                
+                                <div class="text-center">
+                                    <a href="/sign-in" class="btn btn-primary">Get started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <% }) %>
+                <% } %>
+            </div>
+            
+        </div>
+
+        <!-- Referral component -->
+        <div class="container">
+          <div class=" mb-3">
+            <h5 class=" about-title tex-center">Affiliate Program</h5>
+            <p class="card-text mt-2 text-start">
+            As an investor, you can make extra cash by referring your friends and families using your 
+            referral code. Note that your referral code is your username. 
+
+            </p>
+          </div>           
+        </div>
+        <div class="row">
+          
+          <div class="col-lg-4 col-md-6 col-sm-12 mx-auto tex-center">
+            <div class="card mb-4">
+                <h5 class="card-header text-center bg-info">Referral Bonus</h5>
+                <div class="card-body text-center">
+                  <p class="text-dark">Direct Bonus: 10% per valid desposit</p>
+                  <p class="text-dark">Indirect Bonus: 5% per valid deposit </p>
+                  <div class="text-center mt-4">
+                    <a href="/sign-in" class="btn btn-primary text-dark ">Get started</a>
+                  </div>
+                </div>
+            </div>
+          </div> 
+        </div> 
+      </div>
+
+    </div>
+    
+    <!-- Footer -->
+    <%- include('./snippets/footer.ejs')  %> 
+
+    <!-- scripts -->
+    <%- include('./snippets/scripts.ejs')  %> 
+ 
+
+  <!-- Live chat -->
+  <%- include('./snippets/live_chat.ejs') %>
+</body>
+
+</html>
