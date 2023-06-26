@@ -311,7 +311,8 @@ module.exports = {
 
                 // Asign investment levels
                 // Level 1
-                if (parseFloat(_deposit.amount) >= parseFloat(fee[0]) && parseFloat(_deposit.amount) < parseFloat(fee[1])) {
+                
+                if (parseFloat(_deposit.amount) >= parseFloat(fee[0]) && parseFloat(_deposit.amount) <= parseFloat(fee[1])) {
                     plan = p.title;
                 }
                 
